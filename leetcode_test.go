@@ -140,3 +140,24 @@ func TestIsSubsequence(t *testing.T) {
 		assert.Equal(t, v.result, result)
 	}
 }
+
+// 12_container_with_most_water.go
+func TestContainerWithMostWater(t *testing.T) {
+	testCases := []struct {
+		input  []int
+		result int
+	}{
+		{input: []int{1, 8, 6, 2, 5, 4, 8, 3, 7}, result: 49},
+		{input: []int{1, 8, 6, 2, 5, 4, 8, 25, 7}, result: 49},
+		{input: []int{2, 2, 2, 2, 0, 0, 0, 0, 0, 1}, result: 9},
+		{input: []int{1, 1}, result: 1},
+		{input: []int{1, 2, 4, 3}, result: 4},
+		{input: []int{2, 3, 10, 5, 7, 8, 9}, result: 36},
+		{input: []int{1, 3, 2, 5, 25, 24, 5}, result: 24},
+	}
+
+	for _, v := range testCases {
+		result := maxArea(v.input)
+		assert.Equal(t, v.result, result)
+	}
+}

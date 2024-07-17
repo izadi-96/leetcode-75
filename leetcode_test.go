@@ -161,3 +161,23 @@ func TestContainerWithMostWater(t *testing.T) {
 		assert.Equal(t, v.result, result)
 	}
 }
+
+// 12_max_number_of_k_sum
+func TestMaxNumberOfKSum(t *testing.T) {
+	testCases := []struct {
+		input  []int
+		sum    int
+		result int
+	}{
+		{input: []int{1, 2, 3, 4}, sum: 5, result: 2},
+		{input: []int{0}, sum: 5, result: 0},
+		{input: []int{5, 0}, sum: 5, result: 1},
+		{input: []int{3, 3, 3, 3, 3}, sum: 6, result: 2},
+		{input: []int{5, 1, 3, 3, 3, 3, 3, 1, 5}, sum: 6, result: 4},
+	}
+
+	for _, v := range testCases {
+		result := maxOperations(v.input, v.sum)
+		assert.Equal(t, v.result, result)
+	}
+}

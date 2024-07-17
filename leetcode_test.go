@@ -162,7 +162,7 @@ func TestContainerWithMostWater(t *testing.T) {
 	}
 }
 
-// 12_max_number_of_k_sum
+// 13_max_number_of_k_sum
 func TestMaxNumberOfKSum(t *testing.T) {
 	testCases := []struct {
 		input  []int
@@ -178,6 +178,23 @@ func TestMaxNumberOfKSum(t *testing.T) {
 
 	for _, v := range testCases {
 		result := maxOperations(v.input, v.sum)
+		assert.Equal(t, v.result, result)
+	}
+}
+
+// 14_max_average_sub_array
+func TestMaxAverageSubArray(t *testing.T) {
+	testCases := []struct {
+		input  []int
+		window int
+		result float64
+	}{
+		{input: []int{1, 12, -5, -6, 50, 3}, window: 4, result: 12.75},
+		{input: []int{0, 4, 0, 3, 2}, window: 1, result: 4},
+	}
+
+	for _, v := range testCases {
+		result := findMaxAverage(v.input, v.window)
 		assert.Equal(t, v.result, result)
 	}
 }
